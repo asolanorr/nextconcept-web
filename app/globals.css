@@ -1,13 +1,13 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-color: #5d5ffc;
+  --primary-color-dark: #494cfe;
+  --secondary-color: #7f65f8;
+  --secondary-color-dark: #6a4af8;
+  --text-color-dark: #3c4860;
+  --text-color-normal: #4d5f80;
+  --text-color-light: #ffffff;
+  --background-dark: #1a1f26;
+  --background-light: #eff2f6;
 }
 
 html,
@@ -17,8 +17,7 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--text-color-normal);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,10 +32,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

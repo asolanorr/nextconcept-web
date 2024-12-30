@@ -1,0 +1,24 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  background-color: #fff;
+  font-size: 14px;
+  padding: 0 80px;
+  border-bottom: 1px solid var(--background-light);
+}
+
+.linksContainer a {
+  margin: 0px 20px;
+}
+
+.linksContainer a:hover {
+  color: var(--primary-color);
+}
+
+.logoContainer svg {
+  width: 110px;
+  height: 45px;
+  margin-top: 7px;
+}
