@@ -1,10 +1,26 @@
 .button {
-  /* background-color: var(--primary-color); */
-  background-color: #fff;
-  border: 1px solid var(--background-light) !important;
-  color: var(--text-color-normal);
   padding: 14px 18px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
+}
+
+.white {
+  background-color: #fff;
+  color: var(--text-color-normal);
+  border: 1px solid var(--background-light) !important;
+}
+
+.white:hover {
+  background-color: var(--background-light);
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: 1px solid var(--secondary-color) !important;
+}
+
+.primary:hover {
+  background-color: var(--primary-color-dark);
 }

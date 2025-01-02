@@ -24,7 +24,7 @@ export default function Navbar() {
         </a>
       </div>
 
-      <Button />
+      <Button title="Get Started" color="white" />
     </nav>
   );
 }

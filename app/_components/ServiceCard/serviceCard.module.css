@@ -1,0 +1,29 @@
+.serviceCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 75px;
+}
+
+.serviceCardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 75px;
+  min-height: 75px;
+  background-color: rgba(93, 96, 252, 0.09);
+  border-radius: 14px;
+  margin-right: 25px;
+}
+
+.serviceCardIcon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.serviceCardTitle {
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--text-color-dark);
+}

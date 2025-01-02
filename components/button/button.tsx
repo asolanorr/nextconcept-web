@@ -1,5 +1,23 @@
 import styles from './button.module.css';
 
-export default function Button() {
-  return <button className={styles.button}>Let's Talk</button>;
+interface Button {
+  title: string;
+  color: 'white' | 'primary';
+}
+
+export default function Button({ title, color }: Button) {
+  switch (color) {
+    case 'white':
+      return (
+        <button className={`${styles.button} ${styles.white}`}>{title}</button>
+      );
+
+    case 'primary':
+      return (
+        <button className={`${styles.button} ${styles.primary}`}>
+          {title}
+        </button>
+      );
+    default:
+  }
 }
