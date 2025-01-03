@@ -1,4 +1,5 @@
 import styles from '@/app/_components/ContactSection/contactSection.module.css';
+import Button from '@/components/button/button';
 
 export default function ContactSection() {
   return (
@@ -82,9 +83,7 @@ export default function ContactSection() {
               className={styles.formTextarea}
             ></textarea>
           </div>
-          <button type="submit" className={styles.formButton}>
-            Send
-          </button>
+          <Button title="Send Message" color="primary" />
         </form>
       </div>
     </div>

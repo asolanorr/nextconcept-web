@@ -32,3 +32,34 @@
   margin: 10px 0px 40px 0px;
   color: var(--text-color-normal) !important;
 }
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formInputContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.formLabel {
+  font-size: 14px;
+  color: var(--text-color-normal) !important;
+  margin-bottom: 12px;
+}
+
+.formInput {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #bdbdbd;
+}
