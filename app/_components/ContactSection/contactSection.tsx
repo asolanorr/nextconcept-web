@@ -25,13 +25,13 @@ export default function ContactSection() {
         <form className={styles.contactForm}>
           <div className={styles.formInputContainer}>
             <div className={styles.formGroup}>
-              <label htmlFor="email" className={styles.formLabel}>
-                Email
+              <label htmlFor="fullName" className={styles.formLabel}>
+                Full Name
               </label>
               <input
                 type="text"
-                id="email"
-                name="email"
+                id="fullName"
+                name="fullName"
                 className={styles.formInput}
               />
             </div>
@@ -50,13 +50,14 @@ export default function ContactSection() {
 
           <div className={styles.formInputContainer}>
             <div className={styles.formGroup}>
-              <label htmlFor="fullName" className={styles.formLabel}>
-                Full Name
+              <label htmlFor="email" className={styles.formLabel}>
+                Email
               </label>
               <input
                 type="text"
-                id="fullName"
-                name="fullName"
+                id="email"
+                name="email"
+                placeholder="example@email.com"
                 className={styles.formInput}
               />
             </div>
@@ -68,20 +69,24 @@ export default function ContactSection() {
                 type="text"
                 id="phone"
                 name="phone"
+                placeholder="+1 (555) 555-5555"
                 className={styles.formInput}
               />
             </div>
           </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="message" className={styles.formLabel}>
-              Your Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className={styles.formTextarea}
-            ></textarea>
+          <div className={styles.formInputContainer}>
+            <div className={styles.formGroupTextarea}>
+              <label htmlFor="message" className={styles.formLabel}>
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Type your message here"
+                className={styles.formTextarea}
+              ></textarea>
+            </div>
           </div>
           <Button title="Send Message" color="primary" />
         </form>
