@@ -6,10 +6,10 @@ export default function ContactSection() {
     <div className={styles.contactSection}>
       <div className={styles.contactContentContainer}>
         <div className={styles.contactTextContainer}>
+          <h2 className={styles.contactHeader}>Let’s get in touch</h2>
           <h2 className={styles.contactHeader}>
             We’d love to hear about your ideas
           </h2>
-          <h2 className={styles.contactHeader}>Let’s get in touch</h2>
           <p className={styles.contactText}>
             Whether you have a project in mind, want to collaborate, or just
             want to say hello, We’re always open to hearing about new
