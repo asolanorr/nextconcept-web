@@ -4,6 +4,7 @@
   align-items: center;
   width: 100%;
   background-color: var(--background-dark);
+  color: var(--text-color-light);
 }
 
 .footerContentContainer {
@@ -21,7 +22,7 @@
 }
 
 .footerHeader {
-  font-size: 52px;
+  font-size: 48px;
   font-weight: normal;
   color: var(--text-color-light) !important;
   line-height: 1;
@@ -47,4 +48,48 @@
   width: 25%;
   height: 100px;
   margin-bottom: 60px;
+}
+
+.footerColumn svg {
+  width: 122px;
+}
+
+.footerColumn span p {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin-bottom: 4px;
+}
+
+.footerColumn span {
+  display: flex;
+  align-items: center;
+}
+
+.footerColumn span svg {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.footerColumn a {
+  margin: 5px 0px;
+}
+
+.footerColumn a:hover {
+  color: var(--secondary-color);
+}
+
+.footerColumn h4 {
+  margin-bottom: 5px;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 50px 0px;
+  color: var(--text-color-normal);
 }
