@@ -1,0 +1,42 @@
+.whyUsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-light);
+}
+
+.whyUsTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.whyUsTitle {
+  font-size: 52px;
+  font-weight: bold;
+  color: var(--text-color-dark) !important;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.whyUsDescription {
+  width: 65%;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: var(--text-color-normal) !important;
+}
+
+.whyUsCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: var(--container-max-width);
+  padding: 20px;
+}

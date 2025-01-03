@@ -1,0 +1,34 @@
+.contactSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-light);
+}
+
+.contactContentContainer {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: var(--container-max-width);
+}
+
+.contactTextContainer {
+  width: 80%;
+  text-align: center;
+}
+
+.contactHeader {
+  font-size: 52px;
+  font-weight: bold;
+  color: var(--text-color-dark) !important;
+  line-height: 1;
+}
+
+.contactText {
+  font-size: 16px;
+  margin: 10px 0px 40px 0px;
+  color: var(--text-color-normal) !important;
+}

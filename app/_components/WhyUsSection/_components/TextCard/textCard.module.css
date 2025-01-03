@@ -1,0 +1,29 @@
+.textCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 320px;
+  height: 190px;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 16px;
+  background-color: #ffffff85;
+  box-shadow: 0 0 10px #0000001a;
+  transition: all 0.3s;
+}
+
+.textCardTitle {
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--secondary-color) !important;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.textCardDescription {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--text-color-normal) !important;
+}
