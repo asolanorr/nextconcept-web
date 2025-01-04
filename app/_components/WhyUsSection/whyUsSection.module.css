@@ -5,6 +5,11 @@
   width: 100%;
   height: 100vh;
   background-color: var(--background-light);
+  background-image: url('../../../assets/light-grid.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 10%;
+  background-size: 500px;
 }
 
 .whyUsTextContainer {

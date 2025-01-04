@@ -12,6 +12,9 @@
   justify-content: space-between;
   align-items: center;
   width: var(--container-max-width);
+  background-image: url('../../../assets/light-grid.png');
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .heroTextContainer {
