@@ -33,8 +33,8 @@ export default function FooterSection() {
           </div>
           <div className={styles.footerColumn}></div>
           <div className={styles.footerColumn}>
-            <h4>COMPANY</h4>
-            <Link href="/#" title="About Us">
+            <h4>Company</h4>
+            <Link href="/about" title="About Us">
               About Us
             </Link>
             <Link href="/#" title="Contact Us">

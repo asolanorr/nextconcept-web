@@ -11,6 +11,10 @@
   --container-max-width: 1280px;
 }
 
+::selection {
+  background: #5d60fc89;
+}
+
 html,
 body {
   max-width: 100vw;
