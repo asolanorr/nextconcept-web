@@ -1,0 +1,7 @@
+.cursorBlinker {
+  display: inline-block;
+  width: 1px;
+  height: 42px;
+  background-color: #000;
+  transform: translate(0, 1px);
+}

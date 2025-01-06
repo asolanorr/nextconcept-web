@@ -1,12 +1,12 @@
 import styles from '@/app/_components/OurProcessSection/_components/Step/step.module.css';
 
-interface Step {
+interface StepProps {
   stepNumber: string;
   title: string;
   description: string;
 }
 
-export default function Step({ stepNumber, title, description }: Step) {
+export default function Step({ stepNumber, title, description }: StepProps) {
   return (
     <div className={styles.stepContainer}>
       <div className={styles.stepNumber}>{stepNumber}</div>

@@ -15,8 +15,8 @@ export default function ContactSection() {
             want to say hello, We’re always open to hearing about new
             opportunities.
             <br />
-            Let's start a conversation and explore how we can work together to
-            bring your ideas to life!
+            Let&lsquo;s start a conversation and explore how we can work
+            together to bring your ideas to life!
             <br />
             <br />
             Email: contact@yournextconcept.com

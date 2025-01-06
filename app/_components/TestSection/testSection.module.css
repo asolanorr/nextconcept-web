@@ -1,0 +1,80 @@
+.scrollSomethingDiv {
+  display: flex;
+  height: 12rem; /* Equivalente a h-48 (192px en Tailwind) */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  /* "flex h-48 items-center justify-center" */
+}
+
+.horizontalScrollCarousel {
+  position: absolute;
+  height: 300vh;
+  background-color: #171717; /* Equivalente a bg-neutral-900 */
+  /* "relative h-[300vh] bg-neutral-900" */
+}
+
+.horizontalScrollCarouselContainer {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: calc(100vh + 72px); /* Equivalente a h-screen */
+  align-items: center;
+  overflow: hidden;
+  /* "sticky top-0 flex h-screen items-center overflow-hidden" */
+}
+
+.horizontalScrollCarouselInner {
+  display: flex;
+  gap: 1rem;
+  /* "flex gap-4" */
+}
+
+.cardContainer {
+  position: relative;
+  height: 450px;
+  width: 450px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  /* "group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200" */
+}
+
+.cardImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* Equivalente a inset-0 */
+  z-index: 0;
+  transition: transform 0.3s; /* Equivalente a transition-transform duration-300 */
+}
+
+.group:hover .cardImage {
+  transform: scale(1.1); /* Equivalente a group-hover:scale-110 */
+}
+
+.cardTextContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* Equivalente a inset-0 */
+  z-index: 10;
+  display: grid;
+  place-content: center; /* Centra el contenido tanto vertical como horizontalmente */
+}
+
+.cardText {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  ); /* Equivalente a bg-gradient-to-br from-white/20 to-white/0 */
+  padding: 2rem; /* Equivalente a p-8 (32px en Tailwind) */
+  font-size: 3.75rem; /* Equivalente a text-6xl (60px en Tailwind) */
+  font-weight: 900; /* Equivalente a font-black */
+  text-transform: uppercase; /* Equivalente a uppercase */
+  color: white; /* Equivalente a text-white */
+  backdrop-filter: blur(
+    16px
+  ); /* Equivalente a backdrop-blur-lg (16px en Tailwind) */
+}

@@ -1,4 +1,5 @@
 import NextConceptLogo from '@/assets/nextConceptLogo';
+import Link from 'next/link';
 import Button from '../button/button';
 import styles from './navbar.module.css';
 
@@ -11,18 +12,18 @@ export default function Navbar() {
         </div>
 
         <div className={styles.linksContainer}>
-          <a href="/" className={styles.navLink}>
+          <Link href="/" className={styles.navLink}>
             Services
-          </a>
-          <a href="/" className={styles.navLink}>
+          </Link>
+          <Link href="/" className={styles.navLink}>
             Why Us
-          </a>
-          <a href="/" className={styles.navLink}>
+          </Link>
+          <Link href="/" className={styles.navLink}>
             Our Process
-          </a>
-          <a href="/" className={styles.navLink}>
+          </Link>
+          <Link href="/" className={styles.navLink}>
             Contact
-          </a>
+          </Link>
         </div>
 
         <Button title="Get Started" color="white" />

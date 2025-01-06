@@ -1,32 +1,71 @@
+'use client';
+import CursorBlinker from '@/app/_components/CursorBlinker/cursorBlinker';
 import styles from '@/app/_components/HeroSection/heroSection.module.css';
 import Button from '@/components/button/button';
+import {
+  animate,
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useTransform,
+} from 'motion/react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import heroImage from '../../../assets/hero-image.png';
 
 export default function HeroSection() {
+  const baseText = 'We help you to bring your next concept to life_' as string;
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const displayText = useTransform(rounded, (latest) =>
+    baseText.slice(0, latest)
+  );
+
+  const [currentText, setCurrentText] = useState('');
+
+  useMotionValueEvent(displayText, 'change', (latest) => {
+    setCurrentText(latest);
+  });
+
+  useEffect(() => {
+    count.set(0); // Reset count
+    const controls = animate(count, baseText.length, {
+      type: 'tween',
+      duration: 2,
+      ease: 'easeInOut',
+    });
+    return controls.stop;
+  }, [count, baseText.length]);
+
   return (
     <div className={styles.heroSection}>
       <div className={styles.heroContentContainer}>
         <div className={styles.heroTextContainer}>
-          <h1 className={styles.heroTitle}>
-            We help you to bring your next concept to life_
-          </h1>
-          <p className={styles.heroDescription}>
-            At Next Concept, we specialize in transforming innovative ideas into
-            exceptional digital solutions. Whether it's web development, mobile
-            applications, or tailored software, our team is dedicated to
-            delivering top-tier services that align with your vision and goals.
-          </p>
-          <Button title="Let's Talk" color="primary" />
+          <motion.h1 className={styles.heroTitle}>
+            {currentText}
+            <CursorBlinker />
+          </motion.h1>
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, x: [50, 0] }}
+            transition={{ delay: 2, duration: 1.5 }}
+          >
+            <p className={styles.heroDescription}>
+              At Next Concept, we specialize in transforming innovative ideas
+              into exceptional digital solutions. Whether it&lsquo;s web
+              development, mobile applications, or tailored software, our team
+              is dedicated to delivering top-tier services that align with your
+              vision and goals.
+            </p>
+            <Button title="Let's Talk" color="primary" />
+          </motion.section>
         </div>
-        <div className={styles.heroImageContainer}>
-          {/* <Image
-        src={gridImage}
-        width={500}
-        height={500}
-        style={{ position: 'absolute', top: 150, left: '50vh', zIndex: 1 }}
-        alt="Picture of the author"
-      /> */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, x: [50, 0] }}
+          transition={{ duration: 1.5 }}
+          className={styles.heroImageContainer}
+        >
           <Image
             src={heroImage}
             width={600}
@@ -34,7 +73,7 @@ export default function HeroSection() {
             style={{ objectFit: 'contain' }}
             alt="Phone Mock Up"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

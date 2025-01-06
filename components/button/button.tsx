@@ -1,11 +1,11 @@
 import styles from './button.module.css';
 
-interface Button {
+interface ButtonProps {
   title: string;
   color: 'white' | 'primary';
 }
 
-export default function Button({ title, color }: Button) {
+export default function Button({ title, color }: ButtonProps) {
   switch (color) {
     case 'white':
       return (

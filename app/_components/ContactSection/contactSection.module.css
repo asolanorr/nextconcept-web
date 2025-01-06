@@ -5,6 +5,8 @@
   width: 100%;
   min-height: 100vh;
   background-color: var(--background-light);
+  /* The reason for this margin is because we're trying to escape and give space for the absolute positioning of the "Our Process" section due to animation. I know it's not the fanciest solution, but it works! It's 1AM, and I can't sleep with an unresolved issue lol */
+  margin-top: 300vh;
 }
 
 .contactContentContainer {
