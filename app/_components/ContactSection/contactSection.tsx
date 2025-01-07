@@ -1,7 +1,7 @@
 'use client';
 
 import styles from '@/app/_components/ContactSection/contactSection.module.css';
-import Button from '@/components/Button/button';
+import Button from '@/components/button/button';
 import { FormEvent } from 'react';
 
 export default function ContactSection() {

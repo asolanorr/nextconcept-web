@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/Button/button';
+import Button from '@/components/button/button';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import Step from '../OurProcessSection/_components/Step/step';

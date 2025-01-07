@@ -1,5 +1,5 @@
 import styles from '@/app/_components/FooterSection/footerSeccion.module.css';
-import Navbar from '@/components/Navbar/navbar';
+import Navbar from '@/components/navbar/navbar';
 
 export default function About() {
   return (

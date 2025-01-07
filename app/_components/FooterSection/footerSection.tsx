@@ -1,7 +1,7 @@
 import styles from '@/app/_components/FooterSection/footerSeccion.module.css';
 import EmailIcon from '@/assets/emailIcon';
 import NextConceptLogoWhite from '@/assets/nextConceptLogoWhite';
-import Button from '@/components/Button/button';
+import Button from '@/components/button/button';
 import Link from 'next/link';
 
 export default function FooterSection() {

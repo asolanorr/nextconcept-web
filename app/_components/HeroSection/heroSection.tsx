@@ -1,7 +1,7 @@
 'use client';
 import CursorBlinker from '@/app/_components/CursorBlinker/cursorBlinker';
 import styles from '@/app/_components/HeroSection/heroSection.module.css';
-import Button from '@/components/Button/button';
+import Button from '@/components/button/button';
 import {
   animate,
   motion,

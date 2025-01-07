@@ -1,6 +1,6 @@
 import NextConceptLogo from '@/assets/nextConceptLogo';
 import Link from 'next/link';
-import Button from '../Button/button';
+import Button from '../button/button';
 import styles from './navbar.module.css';
 
 export default function Navbar() {
@@ -26,7 +26,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <Button title="Get Started" color="white" />
+        <Button isSubmit={false} title="Get Started" color="white" />
       </div>
     </nav>
   );

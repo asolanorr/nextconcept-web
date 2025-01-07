@@ -4,7 +4,7 @@ import CustomSoftIcon from '@/assets/customSoftIcon';
 import MobileDevIcon from '@/assets/mobileDevIcon';
 import UiuxIcon from '@/assets/uiuxIcon';
 import WebDevIcon from '@/assets/webDevIcon';
-import Button from '@/components/Button/button';
+import Button from '@/components/button/button';
 import { motion } from 'motion/react';
 import ServiceCard from './_components/ServiceCard/serviceCard';
 
