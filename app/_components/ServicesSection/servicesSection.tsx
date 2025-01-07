@@ -4,7 +4,7 @@ import CustomSoftIcon from '@/assets/customSoftIcon';
 import MobileDevIcon from '@/assets/mobileDevIcon';
 import UiuxIcon from '@/assets/uiuxIcon';
 import WebDevIcon from '@/assets/webDevIcon';
-import Button from '@/components/button/button';
+import Button from '@/components/Button/button';
 import { motion } from 'motion/react';
 import ServiceCard from './_components/ServiceCard/serviceCard';
 
@@ -31,7 +31,11 @@ export default function ServicesSection() {
             to your business needs, we’re here to help you achieve your goals
             with innovative digital solutions.
           </p>
-          <Button title="Interested? Let’s chat!" color="white" />
+          <Button
+            isSubmit={false}
+            title="Interested? Let’s chat!"
+            color="white"
+          />
         </motion.div>
 
         <div className={styles.servicesContainer}>

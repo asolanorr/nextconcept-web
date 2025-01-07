@@ -1,7 +1,33 @@
+'use client';
+
 import styles from '@/app/_components/ContactSection/contactSection.module.css';
-import Button from '@/components/button/button';
+import Button from '@/components/Button/button';
+import { FormEvent } from 'react';
 
 export default function ContactSection() {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    const data: Record<string, string> = {};
+
+    // Parsing FormData to JSON
+    formData.forEach((value, key) => {
+      data[key] = value.toString();
+    });
+
+    await fetch('/api/mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    form.reset();
+  }
+
   return (
     <div className={styles.contactSection}>
       <div className={styles.contactContentContainer}>
@@ -22,7 +48,7 @@ export default function ContactSection() {
             Email: contact@yournextconcept.com
           </p>
         </div>
-        <form className={styles.contactForm}>
+        <form onSubmit={onSubmit} className={styles.contactForm}>
           <div className={styles.formInputContainer}>
             <div className={styles.formGroup}>
               <label htmlFor="fullName" className={styles.formLabel}>
@@ -54,7 +80,7 @@ export default function ContactSection() {
                 Email
               </label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 placeholder="example@email.com"
@@ -66,7 +92,7 @@ export default function ContactSection() {
                 Phone Number
               </label>
               <input
-                type="text"
+                type="tel"
                 id="phone"
                 name="phone"
                 placeholder="+1 (555) 555-5555"
@@ -88,7 +114,7 @@ export default function ContactSection() {
               ></textarea>
             </div>
           </div>
-          <Button title="Send Message" color="primary" />
+          <Button isSubmit={true} title="Send Message" color="primary" />
         </form>
       </div>
     </div>

@@ -1,7 +1,7 @@
 'use client';
 import CursorBlinker from '@/app/_components/CursorBlinker/cursorBlinker';
 import styles from '@/app/_components/HeroSection/heroSection.module.css';
-import Button from '@/components/button/button';
+import Button from '@/components/Button/button';
 import {
   animate,
   motion,
@@ -57,7 +57,7 @@ export default function HeroSection() {
               is dedicated to delivering top-tier services that align with your
               vision and goals.
             </p>
-            <Button title="Let's Talk" color="primary" />
+            <Button isSubmit={false} title="Let's Talk" color="primary" />
           </motion.section>
         </div>
         <motion.div

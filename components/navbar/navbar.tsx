@@ -1,6 +1,6 @@
 import NextConceptLogo from '@/assets/nextConceptLogo';
 import Link from 'next/link';
-import Button from '../button/button';
+import Button from '../Button/button';
 import styles from './navbar.module.css';
 
 export default function Navbar() {

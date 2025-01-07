@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/button/button';
+import Button from '@/components/Button/button';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import Step from '../OurProcessSection/_components/Step/step';
@@ -96,7 +96,11 @@ export default function OurProcessSection() {
               the development process.
             </p>
 
-            <Button title="Interested? Let’s chat!" color="white" />
+            <Button
+              isSubmit={false}
+              title="Interested? Let’s chat!"
+              color="white"
+            />
           </motion.div>
         </div>
       </div>
