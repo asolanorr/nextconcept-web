@@ -32,3 +32,54 @@
   font-weight: normal;
   color: var(--text-color-normal) !important;
 }
+
+@media (max-width: 1024px) {
+  .stepContainer {
+    width: 444px;
+  }
+}
+
+@media (max-width: 910px) {
+  .stepContainer {
+    width: 390px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepContainer {
+    width: 300px;
+  }
+}
+
+@media (max-width: 660px) {
+  .stepContainer {
+    width: 260px;
+  }
+}
+
+@media (max-width: 460px) {
+  .stepContainer {
+    flex-direction: column;
+    width: 320px;
+  }
+
+  .stepNumber {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .stepContainer {
+    width: 305px;
+  }
+
+  .stepNumber {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .stepContainer {
+    width: 245px;
+  }
+}

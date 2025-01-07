@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--background-light);
 }
 
@@ -37,4 +37,38 @@
 
 .heroImageContainer {
   margin-left: 20px;
+}
+
+@media (max-width: 1280px) {
+  .heroContentContainer {
+    padding: 0px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroImageContainer img {
+    width: 444px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroImageContainer img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 460px) {
+  .heroTextContainer {
+    width: 100%;
+    margin: 0;
+  }
+
+  .heroImageContainer {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .heroImageContainer img {
+    display: none;
+  }
 }

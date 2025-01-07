@@ -32,3 +32,15 @@
   height: 45px;
   margin-top: 7px;
 }
+
+@media (max-width: 1280px) {
+  .navContainerContent {
+    padding: 0px 30px;
+  }
+}
+
+@media (max-width: 660px) {
+  .linksContainer {
+    display: none;
+  }
+}

@@ -7,7 +7,7 @@ export default function ContactSection() {
       <div className={styles.contactContentContainer}>
         <div className={styles.contactTextContainer}>
           <h2 className={styles.contactHeader}>Let’s get in touch</h2>
-          <h2 className={styles.contactHeader}>
+          <h2 className={styles.contactHeader2}>
             We’d love to hear about your ideas
           </h2>
           <p className={styles.contactText}>

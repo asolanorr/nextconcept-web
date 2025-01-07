@@ -27,3 +27,33 @@
   font-weight: normal;
   color: var(--text-color-dark);
 }
+
+@media (max-width: 910px) {
+  .serviceCard {
+    height: 110px;
+  }
+}
+
+@media (max-width: 660px) {
+  .serviceCard {
+    height: 100px;
+  }
+}
+
+@media (max-width: 460px) {
+  .serviceCard {
+    height: 115px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .serviceCard .serviceCardIcon {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 375px) {
+  .serviceCard {
+    height: 130px;
+  }
+}

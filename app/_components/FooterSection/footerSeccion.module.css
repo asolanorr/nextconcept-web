@@ -97,3 +97,29 @@
   margin: 50px 0px;
   color: var(--text-color-normal);
 }
+
+@media (max-width: 1280px) {
+  .footerContentContainer {
+    padding: 0px 30px;
+  }
+}
+
+@media (max-width: 460px) {
+  .footerColumn span {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  .footerTextContainer {
+    width: 90%;
+  }
+
+  .footerColumnsContainer {
+    width: 90%;
+  }
+
+  .foot {
+    width: 90%;
+  }
+}
