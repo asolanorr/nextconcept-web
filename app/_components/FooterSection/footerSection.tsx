@@ -18,7 +18,7 @@ export default function FooterSection() {
             innovative software, our team is here to help you succeed. Let’s
             create something amazing together!
           </p>
-          <Button title="Get in Touch" color="primary" />
+          <Button isSubmit={false} title="Get in Touch" color="primary" />
         </div>
         <div className={styles.footerColumnsContainer}>
           <div className={styles.footerColumn}>
