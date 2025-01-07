@@ -31,7 +31,7 @@ export default function HeroSection() {
     count.set(0); // Reset count
     const controls = animate(count, baseText.length, {
       type: 'tween',
-      duration: 2,
+      duration: 1.5,
       ease: 'easeInOut',
     });
     return controls.stop;
@@ -47,8 +47,8 @@ export default function HeroSection() {
           </motion.h1>
           <motion.section
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, x: [50, 0] }}
-            transition={{ delay: 2, duration: 1.5 }}
+            animate={{ opacity: 1, x: [20, 0] }}
+            transition={{ delay: 1, duration: 1.5 }}
           >
             <p className={styles.heroDescription}>
               At Next Concept, we specialize in transforming innovative ideas

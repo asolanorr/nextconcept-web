@@ -74,7 +74,15 @@ export default function OurProcessSection() {
           </motion.div>
         </div>
         <div className={styles.right}>
-          <div className={styles.OurProcessTextContainer}>
+          <motion.div
+            className={styles.OurProcessTextContainer}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1,
+              scale: { type: 'spring', bounce: 0.1 },
+            }}
+          >
             <h1 className={styles.OurProcessTitle}>
               Our Proven, Flexible Process
             </h1>
@@ -89,7 +97,7 @@ export default function OurProcessSection() {
             </p>
 
             <Button title="Interested? Let’s chat!" color="white" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

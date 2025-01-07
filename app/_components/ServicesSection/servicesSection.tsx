@@ -14,9 +14,12 @@ export default function ServicesSection() {
       <div className={styles.servicesContentContainer}>
         <motion.div
           className={styles.servicesTextContainer}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1,
+            scale: { type: 'spring', bounce: 0.1 },
+          }}
         >
           <h2 className={styles.servicesTitle}>
             We Transform Ideas into Digital Solutions
