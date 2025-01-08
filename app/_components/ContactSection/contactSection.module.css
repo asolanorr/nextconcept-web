@@ -107,6 +107,13 @@
   margin: 30px;
 }
 
+.errorText {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: bold;
+}
+
 @media (max-width: 1280px) {
   .contactContentContainer {
     padding: 0px 30px;

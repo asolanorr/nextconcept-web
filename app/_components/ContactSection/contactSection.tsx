@@ -4,11 +4,12 @@ import styles from '@/app/_components/ContactSection/contactSection.module.css';
 import ArrowUpIcon from '@/assets/arrowUpIcon';
 import Button from '@/components/button/button';
 import useGoToSection from '@/utils/useGoToSection';
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import CircleButton from './_components/circleButton';
 
 export default function ContactSection() {
   const goToHeroSection = useGoToSection('home');
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -22,6 +23,22 @@ export default function ContactSection() {
       data[key] = value.toString();
     });
 
+    // Validation
+    const newErrors: Record<string, string> = {};
+    if (!data.fullName) newErrors.fullName = 'Full name is required.';
+    if (!data.email) {
+      newErrors.email = 'Email is required.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      newErrors.email = 'Invalid email format.';
+    }
+    if (!data.message) newErrors.message = 'Message is required.';
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return; // Stop submission if there are errors
+    }
+
     await fetch('/api/mail', {
       method: 'POST',
       headers: {
@@ -31,6 +48,7 @@ export default function ContactSection() {
     });
 
     form.reset();
+    setErrors({});
   }
 
   return (
@@ -65,6 +83,9 @@ export default function ContactSection() {
                 name="fullName"
                 className={styles.formInput}
               />
+              {errors.fullName && (
+                <p className={styles.errorText}>{errors.fullName}</p>
+              )}
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="company" className={styles.formLabel}>
@@ -91,6 +112,9 @@ export default function ContactSection() {
                 placeholder="example@email.com"
                 className={styles.formInput}
               />
+              {errors.email && (
+                <p className={styles.errorText}>{errors.email}</p>
+              )}
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="phone" className={styles.formLabel}>
@@ -117,6 +141,9 @@ export default function ContactSection() {
                 placeholder="Type your message here"
                 className={styles.formTextarea}
               ></textarea>
+              {errors.message && (
+                <p className={styles.errorText}>{errors.message}</p>
+              )}
             </div>
           </div>
           <Button isSubmit={true} title="Send Message" color="primary" />
