@@ -1,11 +1,11 @@
 'use client';
 
-import styles from '@/app/_components/FooterSection/footerSeccion.module.css';
 import EmailIcon from '@/assets/emailIcon';
 import NextConceptLogoWhite from '@/assets/nextConceptLogoWhite';
 import Button from '@/components/button/button';
 import useGoToSection from '@/utils/useGoToSection';
 import Link from 'next/link';
+import styles from './footerSeccion.module.css';
 
 export default function FooterSection() {
   const goToContactSection = useGoToSection('contact');
@@ -56,10 +56,18 @@ export default function FooterSection() {
           </div>
           <div className={styles.footerColumn}>
             <h4>Legal</h4>
-            <Link href="/#" title="Privacy Policy">
+            <Link
+              href="/NC_Privacy-Policy.pdf"
+              target="_blank"
+              title="Privacy Policy"
+            >
               Privacy Policy
             </Link>
-            <Link href="/#" title="Terms and Conditions of Service">
+            <Link
+              href="/NC_Terms-and-Conditions.pdf"
+              target="_blank"
+              title="Terms and Conditions of Service"
+            >
               Terms and Conditions of Service
             </Link>
           </div>
