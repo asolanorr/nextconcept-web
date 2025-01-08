@@ -1,32 +1,41 @@
+'use client';
 import NextConceptLogo from '@/assets/nextConceptLogo';
+import useGoToSection from '@/utils/useGoToSection';
 import Link from 'next/link';
 import Button from '../button/button';
 import styles from './navbar.module.css';
 
 export default function Navbar() {
+  const goToContactSection = useGoToSection('contact');
+
   return (
     <nav className={styles.navContainer}>
       <div className={styles.navContainerContent}>
-        <div className={styles.logoContainer}>
+        <Link href="/#home" className={styles.logoContainer}>
           <NextConceptLogo />
-        </div>
+        </Link>
 
         <div className={styles.linksContainer}>
-          <Link href="/" className={styles.navLink}>
+          <Link href="/#services" className={styles.navLink}>
             Services
           </Link>
-          <Link href="/" className={styles.navLink}>
+          <Link href="/#why-us" className={styles.navLink}>
             Why Us
           </Link>
-          <Link href="/" className={styles.navLink}>
+          <Link href="/#our-process" className={styles.navLink}>
             Our Process
           </Link>
-          <Link href="/" className={styles.navLink}>
+          <Link href="/#contact" className={styles.navLink}>
             Contact
           </Link>
         </div>
 
-        <Button isSubmit={false} title="Get Started" color="white" />
+        <Button
+          onClickFunction={goToContactSection}
+          isSubmit={false}
+          title="Get Started"
+          color="white"
+        />
       </div>
     </nav>
   );

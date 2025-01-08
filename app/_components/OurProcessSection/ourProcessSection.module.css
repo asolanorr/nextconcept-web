@@ -1,3 +1,7 @@
+.ourProcessSection {
+  position: relative;
+}
+
 .horizontalScrollCarousel {
   position: absolute;
   left: 0;
@@ -9,10 +13,9 @@
 }
 
 .horizontalScrollCarouselContainer {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   margin-inline: auto;
   display: flex;
   max-width: var(--container-max-width);
@@ -23,6 +26,7 @@
   background-repeat: no-repeat;
   background-position-x: 80%;
   background-position-y: 50%;
+  z-index: 0;
 }
 
 .horizontalScrollCarouselContainer .left,

@@ -1,10 +1,15 @@
+'use client';
+
 import styles from '@/app/_components/FooterSection/footerSeccion.module.css';
 import EmailIcon from '@/assets/emailIcon';
 import NextConceptLogoWhite from '@/assets/nextConceptLogoWhite';
 import Button from '@/components/button/button';
+import useGoToSection from '@/utils/useGoToSection';
 import Link from 'next/link';
 
 export default function FooterSection() {
+  const goToContactSection = useGoToSection('contact');
+
   return (
     <footer className={styles.footerSection}>
       <div className={styles.footerContentContainer}>
@@ -18,7 +23,12 @@ export default function FooterSection() {
             innovative software, our team is here to help you succeed. Let’s
             create something amazing together!
           </p>
-          <Button isSubmit={false} title="Get in Touch" color="primary" />
+          <Button
+            onClickFunction={goToContactSection}
+            isSubmit={false}
+            title="Get in Touch"
+            color="primary"
+          />
         </div>
         <div className={styles.footerColumnsContainer}>
           <div className={styles.footerColumn}>

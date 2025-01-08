@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/components/button/button';
+import useGoToSection from '@/utils/useGoToSection';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import Step from '../OurProcessSection/_components/Step/step';
@@ -50,11 +51,15 @@ export default function OurProcessSection() {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-
   const x = useTransform(scrollYProgress, [0, 1], ['1%', '-80%']);
+  const goToContactSection = useGoToSection('contact');
 
   return (
-    <section ref={targetRef} className={styles.horizontalScrollCarousel}>
+    <section
+      id="our-process"
+      ref={targetRef}
+      className={styles.horizontalScrollCarousel}
+    >
       <div className={styles.horizontalScrollCarouselContainer}>
         <div className={styles.left}>
           <motion.div
@@ -97,6 +102,7 @@ export default function OurProcessSection() {
             </p>
 
             <Button
+              onClickFunction={goToContactSection}
               isSubmit={false}
               title="Interested? Let’s chat!"
               color="white"

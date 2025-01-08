@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export default function WhyUsSection() {
   return (
-    <div className={styles.whyUsSection}>
+    <section id="why-us" className={styles.whyUsSection}>
       <div className={styles.whyUsContentContainer}>
         <motion.div
           className={styles.whyUsTextContainer}
@@ -55,6 +55,6 @@ export default function WhyUsSection() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

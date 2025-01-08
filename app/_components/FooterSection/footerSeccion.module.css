@@ -5,6 +5,7 @@
   width: 100%;
   background-color: var(--background-dark);
   color: var(--text-color-light);
+  z-index: 1000;
 }
 
 .footerContentContainer {

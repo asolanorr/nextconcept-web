@@ -3,13 +3,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh + 72px);
   background-color: var(--background-light);
   background-image: url('../../../assets/light-grid.png');
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 10%;
   background-size: 500px;
+  z-index: 1000;
 }
 
 .whyUsContentContainer {

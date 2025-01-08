@@ -2,6 +2,7 @@
 import CursorBlinker from '@/app/_components/CursorBlinker/cursorBlinker';
 import styles from '@/app/_components/HeroSection/heroSection.module.css';
 import Button from '@/components/button/button';
+import useGoToSection from '@/utils/useGoToSection';
 import {
   animate,
   motion,
@@ -17,11 +18,11 @@ export default function HeroSection() {
   const baseText = 'We help you to bring your next concept to life_' as string;
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [currentText, setCurrentText] = useState('');
+  const goToContactSection = useGoToSection('contact');
   const displayText = useTransform(rounded, (latest) =>
     baseText.slice(0, latest)
   );
-
-  const [currentText, setCurrentText] = useState('');
 
   useMotionValueEvent(displayText, 'change', (latest) => {
     setCurrentText(latest);
@@ -38,7 +39,7 @@ export default function HeroSection() {
   }, [count, baseText.length]);
 
   return (
-    <div className={styles.heroSection}>
+    <section id="home" className={styles.heroSection}>
       <div className={styles.heroContentContainer}>
         <div className={styles.heroTextContainer}>
           <motion.h1 className={styles.heroTitle}>
@@ -57,7 +58,12 @@ export default function HeroSection() {
               is dedicated to delivering top-tier services that align with your
               vision and goals.
             </p>
-            <Button isSubmit={false} title="Let's Talk" color="primary" />
+            <Button
+              isSubmit={false}
+              title="Let's Talk"
+              color="primary"
+              onClickFunction={goToContactSection}
+            />
           </motion.section>
         </div>
         <motion.div
@@ -75,6 +81,6 @@ export default function HeroSection() {
           />
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

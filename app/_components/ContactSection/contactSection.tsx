@@ -1,10 +1,15 @@
 'use client';
 
 import styles from '@/app/_components/ContactSection/contactSection.module.css';
+import ArrowUpIcon from '@/assets/arrowUpIcon';
 import Button from '@/components/button/button';
+import useGoToSection from '@/utils/useGoToSection';
 import { FormEvent } from 'react';
+import CircleButton from './_components/circleButton';
 
 export default function ContactSection() {
+  const goToHeroSection = useGoToSection('home');
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -29,7 +34,7 @@ export default function ContactSection() {
   }
 
   return (
-    <div className={styles.contactSection}>
+    <section id="contact" className={styles.contactSection}>
       <div className={styles.contactContentContainer}>
         <div className={styles.contactTextContainer}>
           <h2 className={styles.contactHeader}>Let’s get in touch</h2>
@@ -117,6 +122,12 @@ export default function ContactSection() {
           <Button isSubmit={true} title="Send Message" color="primary" />
         </form>
       </div>
-    </div>
+      <span className={styles.goToTopButtonContainer}>
+        <CircleButton
+          icon={<ArrowUpIcon />}
+          onClickFunction={goToHeroSection}
+        />
+      </span>
+    </section>
   );
 }

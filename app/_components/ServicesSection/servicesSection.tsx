@@ -5,12 +5,15 @@ import MobileDevIcon from '@/assets/mobileDevIcon';
 import UiuxIcon from '@/assets/uiuxIcon';
 import WebDevIcon from '@/assets/webDevIcon';
 import Button from '@/components/button/button';
+import useGoToSection from '@/utils/useGoToSection';
 import { motion } from 'motion/react';
 import ServiceCard from './_components/ServiceCard/serviceCard';
 
 export default function ServicesSection() {
+  const goToContactSection = useGoToSection('contact');
+
   return (
-    <div className={styles.servicesSection}>
+    <section id="services" className={styles.servicesSection}>
       <div className={styles.servicesContentContainer}>
         <motion.div
           className={styles.servicesTextContainer}
@@ -32,6 +35,7 @@ export default function ServicesSection() {
             with innovative digital solutions.
           </p>
           <Button
+            onClickFunction={goToContactSection}
             isSubmit={false}
             title="Interested? Let’s chat!"
             color="white"
@@ -72,6 +76,6 @@ export default function ServicesSection() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

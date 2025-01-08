@@ -1,0 +1,17 @@
+.circleButton {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  color: var(--text-color-normal);
+  border: 1px solid var(--background-light) !important;
+  box-shadow: 1px 4px 9px -1px rgba(0, 0, 0, 0.11);
+  -webkit-box-shadow: 1px 4px 9px -1px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 1px 4px 9px -1px rgba(0, 0, 0, 0.11);
+}
+
+.circleButton:hover {
+  background-color: var(--background-light);
+}
