@@ -1,10 +1,10 @@
 'use client';
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 import styles from './circleButton.module.css';
 
 interface CircleButtonProps {
   icon: ReactNode;
-  onClickFunction?: any;
+  onClickFunction?: MouseEventHandler<HTMLButtonElement>;
 }
 export default function CircleButton({
   icon,

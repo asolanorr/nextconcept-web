@@ -1,12 +1,13 @@
 'use client';
 
+import { MouseEventHandler } from 'react';
 import styles from './button.module.css';
 
 interface ButtonProps {
   title: string;
   color: 'white' | 'primary';
   isSubmit: true | false;
-  onClickFunction?: any;
+  onClickFunction?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function Button({
