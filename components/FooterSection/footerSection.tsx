@@ -1,6 +1,7 @@
 'use client';
 
-import EmailIcon from '@/assets/emailIcon';
+import InstagramIcon from '@/assets/instagramIcon';
+import LinkedInIcon from '@/assets/linkedInIcon';
 import NextConceptLogoWhite from '@/assets/nextConceptLogoWhite';
 import Button from '@/components/button/button';
 import useGoToSection from '@/utils/useGoToSection';
@@ -35,10 +36,26 @@ export default function FooterSection() {
             <NextConceptLogoWhite />
             <p>Bring your next concept to life.</p>
             <br />
-            <br />
-            <span>
+            {/* <span>
               <EmailIcon color="white" />
               <p>contact@yournextconcept.com</p>
+            </span> */}
+            <span>
+              <Link
+                href="https://www.linkedin.com/company/your-next-concept"
+                target="_blank"
+                title="LinkedIn"
+              >
+                <LinkedInIcon />
+              </Link>
+              <Link
+                href="https://www.instagram.com/nextconcept.dev/"
+                target="_blank"
+                title="Instagram"
+              >
+                {' '}
+                <InstagramIcon />
+              </Link>
             </span>
           </div>
           <div className={styles.footerColumn}></div>
@@ -47,11 +64,8 @@ export default function FooterSection() {
             <Link href="/about" title="About Us">
               About Us
             </Link>
-            <Link href="/#" title="Contact Us">
+            <Link href="/#contact" title="Contact Us">
               Contact Us
-            </Link>
-            <Link href="/#" title="FAQ">
-              FAQ
             </Link>
           </div>
           <div className={styles.footerColumn}>

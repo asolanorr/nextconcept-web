@@ -41,7 +41,7 @@
 
 .footerColumnsContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
@@ -51,12 +51,18 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 25%;
-  height: 100px;
+  min-height: 100px;
   margin-bottom: 60px;
 }
 
+.footerColumn > * {
+  min-height: 40px;
+}
+
 .footerColumn svg {
-  width: 115px;
+  width: 110px;
+  height: 35px;
+  margin-left: 1px;
 }
 
 .footerColumn span p {
