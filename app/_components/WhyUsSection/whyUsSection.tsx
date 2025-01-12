@@ -1,6 +1,6 @@
 'use client';
-import TextCard from '@/app/_components/WhyUsSection/_components/TextCard/textCard';
 import styles from '@/app/_components/WhyUsSection/whyUsSection.module.css';
+import TextCard from '@/components/TextCard/textCard';
 import { motion } from 'motion/react';
 
 export default function WhyUsSection() {

@@ -1,4 +1,4 @@
-import styles from '@/app/_components/CursorBlinker/cursorBlinker.module.css';
+import styles from '@/components/HeroSection/_components/CursorBlinker/cursorBlinker.module.css';
 import { motion } from 'motion/react';
 
 const cursorVariants = {

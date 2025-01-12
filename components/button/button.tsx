@@ -8,6 +8,7 @@ interface ButtonProps {
   color: 'white' | 'primary';
   isSubmit: true | false;
   onClickFunction?: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -15,6 +16,7 @@ export default function Button({
   color,
   isSubmit,
   onClickFunction,
+  disabled,
 }: ButtonProps) {
   switch (color) {
     case 'white':
@@ -23,6 +25,7 @@ export default function Button({
           type={isSubmit ? 'submit' : 'button'}
           className={`${styles.button} ${styles.white}`}
           onClick={onClickFunction}
+          disabled={disabled}
         >
           {title}
         </button>
@@ -34,6 +37,7 @@ export default function Button({
           type={isSubmit ? 'submit' : 'button'}
           className={`${styles.button} ${styles.primary}`}
           onClick={onClickFunction}
+          disabled={disabled}
         >
           {title}
         </button>

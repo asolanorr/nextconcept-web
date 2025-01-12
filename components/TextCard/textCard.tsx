@@ -1,5 +1,5 @@
 'use client';
-import styles from '@/app/_components/WhyUsSection/_components/TextCard/textCard.module.css';
+import styles from '@/components/TextCard/textCard.module.css';
 import { motion } from 'motion/react';
 
 interface TextCardProps {

@@ -1,0 +1,60 @@
+.modal {
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  max-width: 500px;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 69px -15px rgba(0, 0, 0, 0.69);
+  -webkit-box-shadow: 0px 4px 69px -15px rgba(0, 0, 0, 0.69);
+  -moz-box-shadow: 0px 4px 69px -15px rgba(0, 0, 0, 0.69);
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+}
+
+.modalContent .icon {
+  display: flex;
+  width: 100px;
+}
+
+.modalContent .text {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.modalButton {
+  position: absolute;
+  top: 10;
+  right: 10;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+}
+
+.modalButton svg {
+  width: 10px;
+  height: 10px;
+}
+
+.modalButton svg path {
+  fill: var(--primary-color);
+}
+
+.modalButton:hover svg path {
+  fill: var(--secondary-color);
+}
+
+.modalButton:hover svg {
+  cursor: pointer;
+}

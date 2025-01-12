@@ -1,20 +1,70 @@
 'use client';
 
-import styles from '@/app/_components/ContactSection/contactSection.module.css';
 import ArrowUpIcon from '@/assets/arrowUpIcon';
 import Button from '@/components/button/button';
-import useGoToSection from '@/utils/useGoToSection';
+import styles from '@/components/ContactSection/contactSection.module.css';
 import { FormEvent, useState } from 'react';
+import useSWRMutation from 'swr/mutation';
+import Modal from '../Modal/modal';
 import CircleButton from './_components/circleButton';
 
-export default function ContactSection() {
-  const goToHeroSection = useGoToSection('home');
+interface ContactSectionProps {
+  applyBackgroundColor: boolean;
+}
+
+interface Errors {
+  [key: string]: string;
+}
+
+const sendMail = async (
+  url: string,
+  { arg: data }: { arg: Record<string, string> }
+) => {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to send mail');
+  }
+
+  return response.json();
+};
+
+export default function ContactSection({
+  applyBackgroundColor,
+}: ContactSectionProps) {
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const { trigger, isMutating: isLoading } = useSWRMutation(
+    '/api/mail',
+    sendMail,
+    {
+      onSuccess: () => {
+        setModalIsOpen(true);
+      },
+      onError: (error) => {
+        console.error('Failed to send mail:', error);
+      },
+    }
+  );
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const form = event.currentTarget as HTMLFormElement;
+    const form = event.currentTarget;
     const formData = new FormData(form);
     const data: Record<string, string> = {};
 
@@ -24,7 +74,7 @@ export default function ContactSection() {
     });
 
     // Validation
-    const newErrors: Record<string, string> = {};
+    const newErrors: Errors = {};
     if (!data.fullName) newErrors.fullName = 'Full name is required.';
     if (!data.email) {
       newErrors.email = 'Email is required.';
@@ -39,20 +89,22 @@ export default function ContactSection() {
       return; // Stop submission if there are errors
     }
 
-    await fetch('/api/mail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    form.reset();
-    setErrors({});
+    try {
+      await trigger(data);
+      form.reset();
+      setErrors({});
+    } catch (error) {
+      console.error('Error while submitting the form:', error);
+    }
   }
 
   return (
-    <section id="contact" className={styles.contactSection}>
+    <section
+      id="contact"
+      className={`${styles.contactSection} ${
+        applyBackgroundColor ? styles.backgroundLight : ''
+      }`}
+    >
       <div className={styles.contactContentContainer}>
         <div className={styles.contactTextContainer}>
           <h2 className={styles.contactHeader}>Let’s get in touch</h2>
@@ -125,7 +177,7 @@ export default function ContactSection() {
                 id="phone"
                 name="phone"
                 placeholder="+1 (555) 555-5555"
-                className={styles.formInput}
+                className={`${styles.formInput}`}
               />
             </div>
           </div>
@@ -146,15 +198,19 @@ export default function ContactSection() {
               )}
             </div>
           </div>
-          <Button isSubmit={true} title="Send Message" color="primary" />
+          <Button
+            isSubmit={true}
+            title={isLoading ? 'Sending...' : 'Send Message'}
+            color="primary"
+            disabled={isLoading}
+          />
         </form>
       </div>
       <span className={styles.goToTopButtonContainer}>
-        <CircleButton
-          icon={<ArrowUpIcon />}
-          onClickFunction={goToHeroSection}
-        />
+        <CircleButton icon={<ArrowUpIcon />} onClickFunction={scrollToTop} />
       </span>
+
+      <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen} />
     </section>
   );
 }

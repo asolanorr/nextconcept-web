@@ -1,14 +1,16 @@
 .contactSection {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: calc(100vh + 72px);
+  background-color: #fff;
+  z-index: 1;
+}
+
+.backgroundLight {
   background-color: var(--background-light);
-  /* The reason for this margin is because we're trying to escape and give space for the absolute positioning of the "Our Process" section due to animation. I know it's not the fanciest solution, but it works! It's 1AM, and I can't sleep with an unresolved issue lol */
-  margin-top: 300vh;
-  position: relative;
-  z-index: 1000;
 }
 
 .contactContentContainer {
@@ -72,6 +74,9 @@
   border-radius: 10px;
   border: 1px solid #bdbdbd;
   outline-color: var(--secondary-color);
+  box-shadow: 0px 4px 84px 0px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0px 4px 84px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 4px 84px 0px rgba(0, 0, 0, 0.07);
 }
 
 .formInput::placeholder {
@@ -94,6 +99,9 @@
   border: 1px solid #bdbdbd;
   outline-color: var(--secondary-color);
   resize: vertical;
+  box-shadow: 0px 4px 84px 0px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0px 4px 84px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0px 4px 84px 0px rgba(0, 0, 0, 0.07);
 }
 
 .formTextarea::placeholder {

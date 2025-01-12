@@ -5,7 +5,7 @@
   width: 100%;
   min-height: 100vh;
   background-color: var(--background-light);
-  z-index: 1000;
+  z-index: 10;
 }
 
 .heroContentContainer {
@@ -13,9 +13,21 @@
   justify-content: space-between;
   align-items: center;
   width: var(--container-max-width);
-  background-image: url('../../../assets/light-grid.png');
+  background-image: url('../../assets/light-grid.png');
   background-repeat: no-repeat;
   background-position: right;
+}
+
+.imageOnLeft {
+  flex-direction: row-reverse;
+}
+
+.whiteBackground {
+  background-color: #fff !important;
+}
+
+.removeBackgroundImage {
+  background-image: none;
 }
 
 .heroTextContainer {
@@ -48,7 +60,8 @@
 
 @media (max-width: 1024px) {
   .heroImageContainer img {
-    width: 444px;
+    width: 440px;
+    margin-right: 30px;
   }
 }
 
@@ -58,7 +71,7 @@
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 560px) {
   .heroTextContainer {
     width: 100%;
     margin: 0;

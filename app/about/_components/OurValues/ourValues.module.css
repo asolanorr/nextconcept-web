@@ -1,23 +1,18 @@
-.whyUsSection {
+.ourValuesSection {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: calc(100vh + 72px);
   background-color: var(--background-light);
-  background-image: url('../../../assets/light-grid.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-position-y: 10%;
-  background-size: 500px;
   z-index: 10;
 }
 
-.whyUsContentContainer {
+.ourValuesContentContainer {
   width: var(--container-max-width);
 }
 
-.whyUsTextContainer {
+.ourValuesTextContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +20,7 @@
   padding: 20px;
 }
 
-.whyUsTitle {
+.ourValuesTitle {
   font-size: 52px;
   font-weight: bold;
   color: var(--text-color-dark) !important;
@@ -33,7 +28,7 @@
   margin-bottom: 15px;
 }
 
-.whyUsDescription {
+.ourValuesDescription {
   width: 65%;
   text-align: center;
   font-size: 16px;
@@ -41,7 +36,7 @@
   color: var(--text-color-normal) !important;
 }
 
-.whyUsCardContainer {
+.ourValuesCardContainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -52,28 +47,28 @@
 }
 
 @media (max-width: 1280px) {
-  .whyUsContentContainer {
+  .ourValuesContentContainer {
     padding: 0px 30px;
   }
 }
 
 @media (max-width: 1280px) {
-  .whyUsTitle {
+  .ourValuesTitle {
     text-align: center;
   }
 
-  .whyUsTextContainer {
+  .ourValuesTextContainer {
     padding: 20px 0;
   }
 
-  .whyUsDescription {
+  .ourValuesDescription {
     width: 100%;
     margin: 0;
   }
 }
 
 @media (max-width: 460px) {
-  .whyUsCardContainer {
+  .ourValuesCardContainer {
     padding: 0px 20px 20px 20px;
   }
 }

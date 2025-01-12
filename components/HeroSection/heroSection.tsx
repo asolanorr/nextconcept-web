@@ -1,6 +1,6 @@
 'use client';
-import CursorBlinker from '@/app/_components/CursorBlinker/cursorBlinker';
-import styles from '@/app/_components/HeroSection/heroSection.module.css';
+import CursorBlinker from '@/components/HeroSection/_components/CursorBlinker/cursorBlinker';
+import styles from '@/components/HeroSection/heroSection.module.css';
 import Button from '@/components/button/button';
 import useGoToSection from '@/utils/useGoToSection';
 import {
@@ -10,12 +10,24 @@ import {
   useMotionValueEvent,
   useTransform,
 } from 'motion/react';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import heroImage from '../../../assets/hero-image.png';
+import { ReactNode, useEffect, useState } from 'react';
 
-export default function HeroSection() {
-  const baseText = 'We help you to bring your next concept to life_' as string;
+interface HeroSectionProps {
+  title: string;
+  description: string;
+  ctaText: string;
+  image: ReactNode;
+  alternativeStyle: boolean;
+}
+
+export default function HeroSection({
+  title,
+  description,
+  ctaText,
+  image,
+  alternativeStyle,
+}: HeroSectionProps) {
+  const baseText = title as string;
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const [currentText, setCurrentText] = useState('');
@@ -39,8 +51,17 @@ export default function HeroSection() {
   }, [count, baseText.length]);
 
   return (
-    <section id="home" className={styles.heroSection}>
-      <div className={styles.heroContentContainer}>
+    <section
+      id="home"
+      className={`${styles.heroSection} ${alternativeStyle ? styles.whiteBackground : null}`}
+    >
+      <div
+        className={`
+          ${styles.heroContentContainer} 
+          ${alternativeStyle ? styles.imageOnLeft : null} 
+          ${alternativeStyle ? styles.removeBackgroundImage : null}
+        `}
+      >
         <div className={styles.heroTextContainer}>
           <motion.h1 className={styles.heroTitle}>
             {currentText}
@@ -51,16 +72,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: [20, 0] }}
             transition={{ delay: 1, duration: 1.5 }}
           >
-            <p className={styles.heroDescription}>
-              At Next Concept, we specialize in transforming innovative ideas
-              into exceptional digital solutions. Whether it&lsquo;s web
-              development, mobile applications, or tailored software, our team
-              is dedicated to delivering top-tier services that align with your
-              vision and goals.
-            </p>
+            <p className={styles.heroDescription}>{description}</p>
             <Button
               isSubmit={false}
-              title="Let's Talk"
+              title={ctaText}
               color="primary"
               onClickFunction={goToContactSection}
             />
@@ -72,13 +87,7 @@ export default function HeroSection() {
           transition={{ duration: 1.5 }}
           className={styles.heroImageContainer}
         >
-          <Image
-            src={heroImage}
-            width={600}
-            height={600}
-            style={{ objectFit: 'contain' }}
-            alt="Phone Mock Up"
-          />
+          {image}
         </motion.div>
       </div>
     </section>
