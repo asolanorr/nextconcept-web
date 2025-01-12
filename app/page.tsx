@@ -4,9 +4,9 @@ import Navbar from '@/components/navbar/navbar';
 import Image from 'next/image';
 import FooterSection from '../components/FooterSection/footerSection';
 import HeroSection from '../components/HeroSection/heroSection';
-import OurProcessSection from './_components/OurProcessSection/ourProcessSection';
 import ServicesSection from './_components/ServicesSection/servicesSection';
 import WhyUsSection from './_components/WhyUsSection/whyUsSection';
+// import OurProcessSection from './_components/OurProcessSection/ourProcessSection';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -34,10 +34,8 @@ export default function Home() {
       />
       <ServicesSection />
       <WhyUsSection />
-      <OurProcessSection />
-      <div className={styles.mTop300vh}>
-        <ContactSection applyBackgroundColor={true} />
-      </div>
+      {/* <OurProcessSection /> */}
+      <ContactSection applyBackgroundColor={false} />
       <FooterSection />
     </div>
   );

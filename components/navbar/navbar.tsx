@@ -22,9 +22,9 @@ export default function Navbar() {
           <Link href="/#why-us" className={styles.navLink}>
             Why Us
           </Link>
-          <Link href="/#our-process" className={styles.navLink}>
+          {/* <Link href="/#our-process" className={styles.navLink}>
             Our Process
-          </Link>
+          </Link> */}
           <Link href="/about" className={styles.navLink}>
             About Us
           </Link>
