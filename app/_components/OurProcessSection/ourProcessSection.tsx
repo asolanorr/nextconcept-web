@@ -2,9 +2,8 @@
 
 import Button from '@/components/button/button';
 import useGoToSection from '@/utils/useGoToSection';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
-import Step from '../OurProcessSection/_components/Step/step';
+import { motion } from 'motion/react';
+import Step from './_components/Step/step';
 import styles from './ourProcessSection.module.css';
 
 type StepType = {
@@ -47,36 +46,22 @@ const steps: StepType[] = [
 ];
 
 export default function OurProcessSection() {
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-80%']);
   const goToContactSection = useGoToSection('contact');
 
   return (
-    <section
-      id="our-process"
-      ref={targetRef}
-      className={styles.horizontalScrollCarousel}
-    >
-      <div className={styles.horizontalScrollCarouselContainer}>
+    <section id="our-process" className={styles.ourProcessSection}>
+      <div className={styles.ourProcessContentContainer}>
         <div className={styles.left}>
-          <motion.div
-            style={{ x }}
-            className={styles.horizontalScrollCarouselInner}
-          >
-            {steps.map((step) => {
-              return (
-                <Step
-                  key={step.stepNumber}
-                  stepNumber={step.stepNumber}
-                  title={step.title}
-                  description={step.description}
-                />
-              );
-            })}
-          </motion.div>
+          {steps.map((step) => {
+            return (
+              <Step
+                key={step.stepNumber}
+                stepNumber={step.stepNumber}
+                title={step.title}
+                description={step.description}
+              />
+            );
+          })}
         </div>
         <div className={styles.right}>
           <motion.div

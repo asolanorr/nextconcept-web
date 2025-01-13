@@ -1,44 +1,33 @@
 .ourProcessSection {
   position: relative;
-}
-
-.horizontalScrollCarousel {
-  position: absolute;
   left: 0;
   right: 0;
   margin-inline: auto;
   width: 100%;
-  height: 300vh;
+  min-height: 100vh;
   background-color: #ffffff;
 }
 
-.horizontalScrollCarouselContainer {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  margin-inline: auto;
+.ourProcessContentContainer {
   display: flex;
-  max-width: var(--container-max-width);
-  height: calc(100vh + 72px);
   align-items: center;
-  overflow: hidden;
+  max-width: var(--container-max-width);
+  height: 100%;
+  margin-inline: auto;
   background-image: url('../../../assets/white-grid.png');
   background-repeat: no-repeat;
   background-position-x: 80%;
   background-position-y: 50%;
+  overflow: hidden;
   z-index: 0;
 }
 
-.horizontalScrollCarouselContainer .left,
-.horizontalScrollCarouselContainer .right {
+.ourProcessContentContainer .left,
+.ourProcessContentContainer .right {
   display: flex;
+  flex-direction: column;
   width: 50%;
   overflow: hidden;
-}
-
-.horizontalScrollCarouselInner {
-  display: flex;
-  gap: 3rem;
 }
 
 .OurProcessTextContainer {
@@ -60,13 +49,13 @@
 }
 
 @media (max-width: 1280px) {
-  .horizontalScrollCarouselContainer {
+  .ourProcessContentContainer {
     padding: 0px 30px;
   }
 }
 
 @media (max-width: 460px) {
-  .horizontalScrollCarouselContainer {
+  .ourProcessContentContainer {
     flex-direction: column-reverse;
     justify-content: center;
   }
@@ -75,8 +64,8 @@
     gap: 1rem;
   }
 
-  .horizontalScrollCarouselContainer .left,
-  .horizontalScrollCarouselContainer .right {
+  .ourProcessContentContainer .left,
+  .ourProcessContentContainer .right {
     width: 100%;
   }
 
