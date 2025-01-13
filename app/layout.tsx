@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://yournextconcept.com/og-image.jpg', // Replace with your actual image URL
+        url: 'https://yournextconcept.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Next Concept Logo and Slogan',

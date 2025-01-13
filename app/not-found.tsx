@@ -8,7 +8,7 @@ export default function NotFound() {
     <main className={styles.notFoundContainer}>
       <Navbar />
       <section className={styles.notFoundContentContainer}>
-        <h1 className={styles.notFoundTitle}>Oops! Looks like you're lost.</h1>
+        <h1 className={styles.notFoundTitle}>Oops! Looks like you’re lost.</h1>
         <h3 className={styles.notFoundSubTitle}>
           This page doesn’t exist, but don’t worry—we’re here to help bring you
           back on track!
@@ -22,13 +22,13 @@ export default function NotFound() {
           Check out our
           <strong>
             <Link href="/"> Home Page </Link>
-          </strong>
+          </strong>{' '}
           or explore our{' '}
           <strong>
             <Link href="/#services"> Services </Link>
           </strong>{' '}
           to see how we can bring your ideas to life. If you think this is a
-          mistake, feel free to{' '}
+          mistake, feel free to
           <strong>
             <Link href="mailto:contact@yournextconcept.com"> Contact Us </Link>
           </strong>
