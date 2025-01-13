@@ -10,6 +10,7 @@ import CircleButton from './_components/circleButton';
 
 interface ContactSectionProps {
   applyBackgroundColor: boolean;
+  hideHeader?: boolean;
 }
 
 interface Errors {
@@ -37,6 +38,7 @@ const sendMail = async (
 
 export default function ContactSection({
   applyBackgroundColor,
+  hideHeader,
 }: ContactSectionProps) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -106,23 +108,26 @@ export default function ContactSection({
       }`}
     >
       <div className={styles.contactContentContainer}>
-        <div className={styles.contactTextContainer}>
-          <h2 className={styles.contactHeader}>Let’s get in touch</h2>
-          <h2 className={styles.contactHeader2}>
-            We’d love to hear about your ideas
-          </h2>
-          <p className={styles.contactText}>
-            Whether you have a project in mind, want to collaborate, or just
-            want to say hello, We’re always open to hearing about new
-            opportunities.
-            <br />
-            Let&lsquo;s start a conversation and explore how we can work
-            together to bring your ideas to life!
-            <br />
-            <br />
-            Email: contact@yournextconcept.com
-          </p>
-        </div>
+        {!hideHeader ? (
+          <div className={styles.contactTextContainer}>
+            <h2 className={styles.contactHeader}>
+              Let’s get in touch
+              <br />
+              We’d love to hear about your ideas
+            </h2>
+            <p className={styles.contactText}>
+              Whether you have a project in mind, want to collaborate, or just
+              want to say hello, We’re always open to hearing about new
+              opportunities.
+              <br />
+              Let&lsquo;s start a conversation and explore how we can work
+              together to bring your ideas to life!
+              <br />
+              <br />
+              Email: contact@yournextconcept.com
+            </p>
+          </div>
+        ) : null}
         <form onSubmit={onSubmit} className={styles.contactForm}>
           <div className={styles.formInputContainer}>
             <div className={styles.formGroup}>

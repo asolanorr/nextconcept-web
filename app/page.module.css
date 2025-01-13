@@ -2,3 +2,47 @@
   /* The reason for this margin is because we're trying to escape and give space for the absolute positioning of the "Our Process" section due to animation. I know it's not the fanciest solution, but it works! It's 1AM, and I can't sleep with an unresolved issue lol */
   margin-top: 300vh;
 }
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 72px;
+}
+
+.notFoundContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--container-max-width);
+  margin-bottom: 40px;
+}
+
+.notFoundTitle {
+  font-size: 52px;
+  font-weight: bold;
+  color: var(--text-color-dark) !important;
+  line-height: 1;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.notFoundSubTitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--text-color-dark) !important;
+  line-height: 1;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.notFoundContentContainer p {
+  text-align: center;
+}
+
+@media (max-width: 1280px) {
+  .notFoundContentContainer {
+    padding: 0px 30px;
+  }
+}
