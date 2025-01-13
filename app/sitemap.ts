@@ -4,5 +4,9 @@ export default async function sitemap() {
       url: 'https://yournextconcept.com',
       lastModified: new Date(),
     },
+    {
+      url: 'https://yournextconcept.com/about',
+      lastModified: new Date(),
+    },
   ];
 }
